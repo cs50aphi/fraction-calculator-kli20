@@ -108,21 +108,27 @@ public class Fraction
         return false;
     }
     
-    // public void toLowestTerms() {
-        
-    // }
+    public void toLowestTerms() {
+        // find gcd of numerator and denominator
+        int factor = gcd(num, den);
+        // divide numerator by GCD
+        num = num / factor;
+        // divide denominator by GCD
+        den = den / factor;
+    }
     
-    public static int gcd(int num, int den) {
+    public static int gcd(int a, int b) {
         //while a and b are not zero
-        while (num != 0 && den != 0) {
-            int  = a % b;
+        while (a != 0 && b != 0) {
+            // find the remainder of a divided by b
+            int remainder = Math.abs(a) % Math.abs(b);
+            //set a to b
+            a = Math.abs(b);
+            //set b to the remainder you found
+            b = remainder;
         }
-
-        //find the remainder of a divided by b
-        //set a to b
-        //set b to the remainder you found
-        // return a
-        
+        // Return GCD
+        return a;
     }
 
     private int findLCM(Fraction f2) {
